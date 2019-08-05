@@ -1,9 +1,7 @@
 <!--NAV-->
 <div class="ui large inverted stackable menu">
   <div class="ui container">
-  <a class="green active item">
-    Chatroom
-  </a>
+  <%= link_to "Chatroom", root_path, class: "green item" %>
   <a class="green item">
     Messages
   </a>
@@ -12,7 +10,7 @@
       Account <i class="dropdown icon"></i>
       <div class="menu">
         <a class="green item">Log out</a>
-        <a class="green item">Log in</a>
+      <%= link_to "Login", login_path, class: "green item" %>
         <a class="green item">Sign up</a>
       </div>
     </div>
