@@ -17,6 +17,36 @@
 //= require semantic-ui
 //= require_tree .
 
+scroll_bottom = function(){
+//= if the container has more than one message
+if ($('#messages').length > 0){
+  //= scroll to the bottom any time this function is called by the  ScrollHeight of the [0]th elem of #messages
+
+  $('#messages').scrollTop($('#messages')[0].scrollHeight);
+
+ }
+}
+
+submit_message = function(){
+  $('#message_body').on('keydown', function(e){
+    if(e.keyCode == 13){     //= i the Enter is pressed
+      $('button').click();  //= click the closest button
+      //=$('#message_body').val('');
+      //=$('#form')[0].reset();
+      e.target.value = "";
+    };
+  });
+};
+
+
+
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
+  $('.message .close').on('click', function() {
+     $(this).closest('.message').transition('fade');
+  });
+  submit_message();
+  scroll_bottom();  //= call the function any time the page loads
+
+
 })
