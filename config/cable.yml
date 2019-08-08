@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://redistogo:99ebdff90ead3f1c2377678980f3b798@hammerjaw.redistogo.com:10130/
   channel_prefix: instant_multichat_production
